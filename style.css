@@ -10,7 +10,8 @@ html, body, *{
     font-size: 10px;
 }
 body{
-    background-color: red;
+   background: linear-gradient(to bottom, red, goldenrod);
+   animation: gradient-shift 15s ease infinite;
 }
 div{
     position: relative;
@@ -33,6 +34,12 @@ h1{
     background-position: center;
     justify-content: center;
     text-align: center;
+}
+#block{
+    height: 200px;
+    border-radius: 1rem;
+    width: 600px;
+    margin-left: 81rem;
 }
 #right{
     margin-left: 170rem;
@@ -73,4 +80,8 @@ h2 {
 }
 h4{
     font-size: 30px;
+}
+
+.largefont{
+    font-size: 35px;
 }
