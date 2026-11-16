@@ -168,12 +168,6 @@ const items = [
     catergory: "Breakfast",
   },
 ];
-function shop() {
-  items.forEach((item) => console.log(`${item.name}, ${item.cost}$`));
-}
-
-shop();
-
 function addtocart() {
   let cart = [];
   cart.push(items[0].name, items[1].name);
@@ -188,4 +182,9 @@ function addtocart() {
     console.log("Invalid Code");
   }
 }
-addtocart();
+const pop = document.querySelector(".pop");
+document.querySelectorAll(".btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    pop.classList.add("is-visible");
+  });
+});

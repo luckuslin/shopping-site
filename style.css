@@ -85,3 +85,11 @@ h4{
 .largefont{
     font-size: 35px;
 }
+.pop{
+    display: none;
+    width: 400px;
+    height: 400px;
+}
+.pop.is-visible{
+    display: block;
+}
