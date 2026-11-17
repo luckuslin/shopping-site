@@ -215,7 +215,7 @@ function addtocart() {
     console.log("Invalid Code");
   }
 }
-const button = document.querySelectorAll(".btn");
+const button = document.querySelectorAll(".btn")a
 function showCart() {
   document.querySelector(".pop").style.display = "flex";
 }
