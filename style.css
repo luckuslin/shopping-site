@@ -20,7 +20,6 @@ div{
     width: 500px;
     height: 500px;
     justify-content:center;
-    background-color: white;
     border-radius: 5rem;
     border-color: yellow;
 }
@@ -88,8 +87,10 @@ h4{
 .pop{
     display: none;
     width: 400px;
-    height: 400px;
+    height: 1000px;
+    position:absolute;
+    align-items: center;
+    text-align: center;
+    justify-content: center;  
 }
-.pop.is-visible{
-    display: block;
-}
+

@@ -168,6 +168,39 @@ const items = [
     catergory: "Breakfast",
   },
 ];
+
+const itemAliases = {
+  doublequarterpounder: "Double Quarter Pounder with Cheese",
+  hamburgerhappymeal: "Happy Meal",
+  "4mcnuggets": "4 Piece Chicken Nuggets",
+  "10mcnuggets": "10 Piece Chicken Nuggets",
+  "20mcnuggets": "20 Piece Chicken Nuggets",
+  smallfrenchfries: "Small Fries",
+  chocolatechipcookie: "Cookie",
+  oreomcflurry: "McFlurry",
+  icedcoffee: "Coffee",
+};
+//sorry i used ai for this part i didnt want to manually add cost to all the divs
+const itemsByName = new Map(
+  items.map((item) => [
+    item.name.toLowerCase().replace(/[^a-z0-9]/g, ""),
+    item,
+  ]),
+);
+
+document.querySelectorAll(".Mcdonaldsimg").forEach((card) => {
+  const name = card.querySelector("h2")?.textContent.trim();
+  const price = card.querySelector("h4");
+  if (!name || !price) return;
+
+  const normalizedName = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const itemName = itemAliases[normalizedName] ?? name;
+  const item = itemsByName.get(
+    itemName.toLowerCase().replace(/[^a-z0-9]/g, ""),
+  );
+  if (item) price.textContent = `$${item.cost.toFixed(2)}`;
+});
+
 function addtocart() {
   let cart = [];
   cart.push(items[0].name, items[1].name);
@@ -182,9 +215,8 @@ function addtocart() {
     console.log("Invalid Code");
   }
 }
-const pop = document.querySelector(".pop");
-document.querySelectorAll(".btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    pop.classList.add("is-visible");
-  });
-});
+const button = document.querySelectorAll(".btn");
+function showCart() {
+  document.querySelector(".pop").style.display = "flex";
+}
+showCart();
