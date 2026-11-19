@@ -200,11 +200,9 @@ document.querySelectorAll(".Mcdonaldsimg").forEach((card) => {
   );
   if (item) price.textContent = `$${item.cost.toFixed(2)}`;
 });
-
 function addtocart() {
   let cart = [];
   cart.push(items[0].name, items[1].name);
-  let price = [];
   price.push(items[0].cost + items[1].cost);
   console.log(cart);
   console.log(price);
@@ -215,8 +213,16 @@ function addtocart() {
     console.log("Invalid Code");
   }
 }
-const button = document.querySelectorAll(".btn")a
-function showCart() {
-  document.querySelector(".pop").style.display = "flex";
+
+const button = document.querySelectorAll(".btn");
+
+function inject() {
+  const cart = document.querySelector(".pop");
+  cart.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card">
+        <h2 class="card-header">${items[3].name}</h2>
+      </div> `,
+  );
 }
-showCart();
+inject();
