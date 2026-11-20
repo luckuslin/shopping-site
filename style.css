@@ -12,7 +12,7 @@ html, body, *{
 body{
    background: linear-gradient(to bottom, red, goldenrod);
    animation: gradient-shift 15s ease infinite;
-   background-image: url(img/Screenshot\ 2026-10-22\ 134724.png);
+   
 }
 div{
     position: relative;
@@ -23,7 +23,7 @@ div{
     justify-content:center;
     border-radius: 5rem;
     border-color: yellow;
-    background-image: url(img/Shopping\ Cart\ Project\ \(Nov\ 20\,\ 2026\ at\ 10_55\ AM\).jpg);
+   
 }
 .logo{
     width: 200px;
@@ -97,7 +97,7 @@ h4{
     align-items: center;
     text-align: center;
     justify-content: center;  
-    background-image: url(img/fat_ishowspeed_by_j0j0999ozman_dfg6451-fullview.jpg);
+
 }
 .cart{
     height: 10px;

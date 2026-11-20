@@ -226,6 +226,5 @@ function injectname() {
       </div> `,
   );
 }
-injectname();
 
 document.getElementById("BigMac").addEventListener("click", injectname());
