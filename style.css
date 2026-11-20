@@ -12,16 +12,18 @@ html, body, *{
 body{
    background: linear-gradient(to bottom, red, goldenrod);
    animation: gradient-shift 15s ease infinite;
+   background-image: url(img/Screenshot\ 2026-10-22\ 134724.png);
 }
 div{
     position: relative;
-    margin: 6rem 12rem;
+    margin: 6rem 9rem;
     padding: 2rem;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     justify-content:center;
     border-radius: 5rem;
     border-color: yellow;
+    background-image: url(img/Shopping\ Cart\ Project\ \(Nov\ 20\,\ 2026\ at\ 10_55\ AM\).jpg);
 }
 .logo{
     width: 200px;
@@ -38,15 +40,19 @@ h1{
     height: 200px;
     border-radius: 1rem;
     width: 600px;
-    margin-left: 81rem;
+    margin-left: 66rem;
 }
 #right{
-    margin-left: 170rem;
+    margin-left: 145rem;
+    margin-top: 10rem;
     
 }
 #hotcakes{
     background-position: center;
-    margin-left: 87rem;
+    margin-left: 73rem;
+}
+#center{
+    margin-top: 40rem;
 }
 .Mcdonaldsimg {
     display: inline-flex;
@@ -57,7 +63,7 @@ h1{
     background-color: yellow;
 }
 .title{
-    width: 1990px;
+    width: 1690px;
     background-color:goldenrod;
     height: 630px;
 }
@@ -74,15 +80,15 @@ img{
 }
 
 h2 {
-    font-size: 50px;;
+    font-size: 40px;;
     
 }
 h4{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .largefont{
-    font-size: 35px;
+    font-size: 25px;
 }
 .pop{
     width: 400px;
@@ -91,5 +97,12 @@ h4{
     align-items: center;
     text-align: center;
     justify-content: center;  
+    background-image: url(img/fat_ishowspeed_by_j0j0999ozman_dfg6451-fullview.jpg);
 }
-
+.cart{
+    height: 10px;
+    margin: 1rem;
+}
+.card-header{
+    margin-left: 50rem;
+}

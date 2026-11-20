@@ -216,13 +216,16 @@ function addtocart() {
 
 const button = document.querySelectorAll(".btn");
 
-function inject() {
+function injectname() {
   const cart = document.querySelector(".pop");
   cart.insertAdjacentHTML(
     "beforeend",
-    `<div class="card">
+    `<div class="cart">
         <h2 class="card-header">${items[3].name}</h2>
+        <h2 class="card-header">${items[3].cost}</h2>
       </div> `,
   );
 }
-inject();
+injectname();
+
+document.getElementById("BigMac").addEventListener("click", injectname());
