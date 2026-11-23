@@ -216,15 +216,34 @@ function addtocart() {
 
 const button = document.querySelectorAll(".btn");
 
-function injectname() {
+function injectname(item) {
   const cart = document.querySelector(".pop");
   cart.insertAdjacentHTML(
     "beforeend",
     `<div class="cart">
-        <h2 class="card-header">${items[3].name}</h2>
-        <h2 class="card-header">${items[3].cost}</h2>
-      </div> `,
+        <h2 class="card-header">${item.name}</h2>
+        <h2 class="card-header">$${item.cost}</h2>
+      </div>`,
   );
 }
+function dejectname() {
+  document.querySelector(".removecart").addEventListener("click", (Event) => {
+    if (Event.target.matches(".removecart")) {
+      Event.target.closest(".cart")?.remove();
+    }
+  });
+}
+dejectname();
+document.querySelectorAll(".Mcdonaldsimg .btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".Mcdonaldsimg");
+    const cardName = card.querySelector("h2").textContent.trim();
+    const normalizedName = cardName.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const itemName = itemAliases[normalizedName] ?? cardName;
+    const item = itemsByName.get(
+      itemName.toLowerCase().replace(/[^a-z0-9]/g, ""),
+    );
 
-document.getElementById("BigMac").addEventListener("click", injectname());
+    if (item) injectname(item);
+  });
+});
