@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body {
-    font-family: 'PT Sans', sans-serif;
-}
 html, body, *{
     margin: 0;
     padding: 0;
@@ -10,9 +7,8 @@ html, body, *{
     font-size: 10px;
 }
 body{
-   background: linear-gradient(to bottom, red, goldenrod);
-   animation: gradient-shift 15s ease infinite;
-   
+   background: linear-gradient(to bottom, red, rgb(233, 169, 7));
+   font-family: 'PT Sans', sans-serif;
 }
 div{
     position: relative;
@@ -93,7 +89,6 @@ h4{
 .pop{
     width: 400px;
     height: 1000px;
-    position:absolute;
     align-items: center;
     text-align: center;
     justify-content: center;  

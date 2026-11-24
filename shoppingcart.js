@@ -200,19 +200,6 @@ document.querySelectorAll(".Mcdonaldsimg").forEach((card) => {
   );
   if (item) price.textContent = `$${item.cost.toFixed(2)}`;
 });
-function addtocart() {
-  let cart = [];
-  cart.push(items[0].name, items[1].name);
-  price.push(items[0].cost + items[1].cost);
-  console.log(cart);
-  console.log(price);
-  let discount = "DISCOUNT";
-  if (discount === "DISCOUNT") {
-    console.log(price * 0.7);
-  } else if (discount != "DISCOUNT") {
-    console.log("Invalid Code");
-  }
-}
 
 const button = document.querySelectorAll(".btn");
 
@@ -222,18 +209,24 @@ function injectname(item) {
     "beforeend",
     `<div class="cart">
         <h2 class="card-header">${item.name}</h2>
-        <h2 class="card-header">$${item.cost}</h2>
       </div>`,
   );
 }
-function dejectname() {
-  document.querySelector(".removecart").addEventListener("click", (Event) => {
-    if (Event.target.matches(".removecart")) {
-      Event.target.closest(".cart")?.remove();
-    }
-  });
+function injectcost(item) {
+  const checkout = document.querySelector(".Checkout");
+  checkout.insertAdjacentHTML(
+    "beforeend"`
+    <div class="cart">
+        <h2 class="card-header">${item.cost}</h2>
+      </div>
+    `,
+  );
 }
-dejectname();
+document.querySelector(".removecart").addEventListener("click", () => {
+  const cartItems = document.querySelectorAll(".pop .cart");
+  cartItems[cartItems.length - 1].remove();
+});
+
 document.querySelectorAll(".Mcdonaldsimg .btn").forEach((button) => {
   button.addEventListener("click", () => {
     const card = button.closest(".Mcdonaldsimg");
@@ -245,5 +238,6 @@ document.querySelectorAll(".Mcdonaldsimg .btn").forEach((button) => {
     );
 
     if (item) injectname(item);
+    if (item) injectcost(item);
   });
 });
