@@ -180,7 +180,7 @@ const itemAliases = {
   oreomcflurry: "McFlurry",
   icedcoffee: "Coffee",
 };
-//sorry i used ai for this part i didnt want to manually add cost to all the divs
+
 const itemsByName = new Map(
   items.map((item) => [
     item.name.toLowerCase().replace(/[^a-z0-9]/g, ""),
@@ -216,7 +216,7 @@ function injectcost(item) {
   const checkout = document.querySelector(".checkout");
   checkout.insertAdjacentHTML(
     "beforeend",
-    `<div class="cart">
+    `<div class="cart" data-cost="${item.cost}">
         <h2 class="card-header">$${item.cost.toFixed(2)}</h2>
       </div>`,
   );
@@ -229,7 +229,17 @@ function addupcosts(item) {
 }
 document.querySelector(".removecart").addEventListener("click", () => {
   const cartItems = document.querySelectorAll(".pop .cart");
+  const checkoutitems = document.querySelectorAll(".checkout .cart");
+  const lastCheckoutItem = checkoutitems[checkoutitems.length - 1];
+  if (!cartItems.length || !lastCheckoutItem) return;
+
+  const removedCost = Number(lastCheckoutItem.dataset.cost);
+  lastCheckoutItem.remove();
   cartItems[cartItems.length - 1].remove();
+
+  const finalcost = document.querySelector(".finalcost");
+  const currentTotal = Number(finalcost.textContent);
+  finalcost.textContent = Math.max(0, currentTotal - removedCost).toFixed(2);
 });
 
 document.querySelectorAll(".Mcdonaldsimg .btn").forEach((button) => {
