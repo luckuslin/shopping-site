@@ -213,14 +213,19 @@ function injectname(item) {
   );
 }
 function injectcost(item) {
-  const checkout = document.querySelector(".Checkout");
+  const checkout = document.querySelector(".checkout");
   checkout.insertAdjacentHTML(
-    "beforeend"`
-    <div class="cart">
-        <h2 class="card-header">${item.cost}</h2>
-      </div>
-    `,
+    "beforeend",
+    `<div class="cart">
+        <h2 class="card-header">$${item.cost.toFixed(2)}</h2>
+      </div>`,
   );
+  addupcosts(item);
+}
+function addupcosts(item) {
+  const finalcost = document.querySelector(".finalcost");
+  const currentTotal = Number(finalcost.textContent);
+  finalcost.textContent = (currentTotal + item.cost).toFixed(2);
 }
 document.querySelector(".removecart").addEventListener("click", () => {
   const cartItems = document.querySelectorAll(".pop .cart");

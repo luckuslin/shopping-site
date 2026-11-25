@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 html, body, *{
     margin: 0;
     padding: 0;
@@ -9,6 +13,9 @@ html, body, *{
 body{
    background: linear-gradient(to bottom, red, rgb(233, 169, 7));
    font-family: 'PT Sans', sans-serif;
+   background-size: 400% 400%;
+   animation: gradientShift 7s ease infinite;
+   height: 13000px;
 }
 div{
     position: relative;
@@ -106,4 +113,8 @@ h4{
    
     height: 200px;
     width: 1000px;
+}
+h3{
+    font-size: 30px;
+    text-align: center;
 }
